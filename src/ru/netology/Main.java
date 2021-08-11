@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Введите предложение для словаря(каждое слово через пробел) и нажмите ENTER:");
         String input = scanner.nextLine();
         String[] array = input.split(" ");
-        WordSortedFunction function = list -> Arrays.stream(list).sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+        WordSortedFunction function = list -> Arrays.stream(list).distinct().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
         function.listSort(array).forEach(System.out::println);
         /* В данном коде отличительной чертой функционального стиля является использование
         WordSortedFunction, как функционального интерфейса...
